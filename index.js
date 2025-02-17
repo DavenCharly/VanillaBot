@@ -1,7 +1,12 @@
 import { Client, GatewayIntentBits } from 'discord.js';
 import dotenv from 'dotenv';
+import express from "express";
 dotenv.config();
 
+
+
+const app = express();
+const PORT = process.env.PORT || 3000;
 const client = new Client({
     intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent]
 });
@@ -46,6 +51,16 @@ client.on("messageCreate", (message) => {
 
         message.reply(`You chose **${userChoice}**\nI chose **${botChoice}**\n${result}`);
     }
+
+
+    // Web server so she doesnt deadge
+app.get("/", (req, res) => {
+  res.send("Vanilla is awake and ready to win!");
+});
+
+app.listen(PORT, () => {
+  console.log(`Web server running on port ${PORT}`);
+});
 });
 
 // Token login
