@@ -1,0 +1,15 @@
+{
+  "name": "Vanilla",
+  "version": "1.0.0",
+  "description": "Vanilla wants to play Rock Paper Scissors with you (more like she wants to beat you at it)",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
+  }
+}
